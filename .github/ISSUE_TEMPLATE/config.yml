@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discussion
+    url: https://github.com/Think-Cube/OWASP-WebApp-Security-Testing-Checklist/discussions
+    about: General questions, ideas, and feedback about the checklist

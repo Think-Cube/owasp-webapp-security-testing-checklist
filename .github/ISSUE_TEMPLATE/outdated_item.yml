@@ -1,0 +1,38 @@
+name: Outdated or Incorrect Item
+description: Report a checklist item that is outdated, incorrect, or no longer reflects current best practices
+title: "Outdated: "
+labels: ["outdated", "triage"]
+body:
+  - type: input
+    id: section
+    attributes:
+      label: Section / Item
+      description: Which section and item is affected?
+      placeholder: "e.g. Section 12, API3:2023 item"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is outdated or incorrect?
+      description: Describe the problem clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction
+      description: What should it say instead?
+    validations:
+      required: false
+
+  - type: input
+    id: reference
+    attributes:
+      label: Reference
+      description: Link to updated OWASP documentation or standard.
+      placeholder: https://owasp.org/...
+    validations:
+      required: false

@@ -1,0 +1,60 @@
+name: Add Checklist Item
+description: Suggest a new test case or section for the checklist
+title: "Add: "
+labels: ["add", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new test case! Please fill in the details below.
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: Section
+      description: Which section should this item be added to?
+      options:
+        - "1. Information Gathering"
+        - "2. Configuration & Deployment Management"
+        - "3. Identity Management"
+        - "4. Authentication Testing"
+        - "5. Authorization Testing"
+        - "6. Session Management"
+        - "7. Input Validation & Injection"
+        - "8. Error Handling & Logging"
+        - "9. Cryptography"
+        - "10. Business Logic Testing"
+        - "11. Client-Side Security"
+        - "12. API Security Testing"
+        - "13. AI / LLM Security Testing"
+        - "14. Denial of Service"
+        - "15. Reporting & Documentation"
+        - New section (describe below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: item
+    attributes:
+      label: Proposed Checklist Item
+      description: Write the item as it should appear in the checklist. Start with a verb (Test, Verify, Check, Confirm).
+      placeholder: "- [ ] 🔍 Test for ..."
+    validations:
+      required: true
+
+  - type: input
+    id: reference
+    attributes:
+      label: OWASP Reference
+      description: WSTG test ID, OWASP API Top 10 category, or other standard reference.
+      placeholder: "e.g. WSTG-AUTHN-06 or API3:2023"
+    validations:
+      required: false
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why is this important?
+      description: Briefly explain the attack vector or risk this item covers.
+    validations:
+      required: true
